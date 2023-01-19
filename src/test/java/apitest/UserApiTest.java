@@ -47,9 +47,16 @@ public class UserApiTest {
     @Test(dependsOnMethods = {"getUserByUserNameTest"})
     @Description("Удаляем пользователя по userName")
     public void deleteUserByUserName() {
-       userApi.deleteUserByName(updaterUser.getUsername());
+       userApi
+               .deleteUserByName(updaterUser.getUsername());
 
-        assertEquals(userApi.getUserByName(updaterUser.getUsername()), "User not found");
+       assertEquals(userApi.getUserByName(
+               updaterUser
+                       .getUsername())
+                       .jsonPath()
+                       .get("message"),
+               "User not found",
+                "Пользователь не был удален");
     }
 
 

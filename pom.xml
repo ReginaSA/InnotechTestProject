@@ -93,12 +93,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.github.sskorol</groupId>
-            <artifactId>test-data-supplier</artifactId>
-            <version>1.9.6</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
