@@ -3,7 +3,6 @@ package services;
 import entities.User;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import org.apache.http.HttpStatus;
 
 import static io.restassured.RestAssured.given;
 import static services.ApiSpecification.requestSpecApiV1;
@@ -27,6 +26,7 @@ public class UserApi {
                         .get("message");
     }
 
+    @Step("Обновление пользователя {userName} через PUT запрос")
     public String updateUser(String userName, User user) {
         return
                 given(requestSpecApiV1(path + userName))
@@ -41,6 +41,7 @@ public class UserApi {
                         .get("message");
     }
 
+    @Step("Получаем данные о пользователе {userName}")
     public Response getUserByName(String username) {
         return given(requestSpecApiV1(path + username))
                 .when()
@@ -51,6 +52,7 @@ public class UserApi {
                 .response();
     }
 
+    @Step("Удаляем пользователя {userName}")
     public String deleteUserByName(String username) {
         return given(requestSpecApiV1(path + username))
                 .when()

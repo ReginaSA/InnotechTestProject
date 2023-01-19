@@ -4,12 +4,10 @@ import com.github.javafaker.Faker;
 import entities.User;
 import io.qameta.allure.Description;
 import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import services.UserApi;
 
 import static org.testng.Assert.*;
-import static org.testng.Assert.assertTrue;
 
 public class UserApiTest {
     private String userId;
@@ -23,7 +21,7 @@ public class UserApiTest {
         userApi = new UserApi();
         createUser = getFakerUserData(null);
         userId = userApi.createUser(createUser);
-        assertNotSame("0", userId, "Был создан пользователь c id:" + userId);
+        assertTrue(userId != "0", "Был создан пользователь c id:" + userId);
     }
 
     @Test(dependsOnMethods = {"createUserTest"})
@@ -58,7 +56,6 @@ public class UserApiTest {
                "User not found",
                 "Пользователь не был удален");
     }
-
 
     private User getFakerUserData(String userId) {
         Faker faker = new Faker();
