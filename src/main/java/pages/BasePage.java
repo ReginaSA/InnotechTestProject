@@ -14,7 +14,7 @@ public abstract class BasePage<T>{
         return "";
     }
 
-    @Step
+    @Step("Открываем страницу")
     public T open() {
         Selenide.open(getUrlPath());
 
