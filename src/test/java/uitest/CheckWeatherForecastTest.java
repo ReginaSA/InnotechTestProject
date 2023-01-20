@@ -9,8 +9,8 @@ public class CheckWeatherForecastTest {
 
 
     @Test
-    @Description("Тест выполняет  поиск и переход на сайт gismeteo" +
-            "и переходит на страницу прогноза погоды по заданному городу ")
+    @Description("Тест выполняет поиск и переход на сайт gismeteo" +
+            "далее переходит на страницу прогноза погоды по заданному городу ")
     public void checkWeatherForecastOnGismeteoTest() {
         YandexSearchPage yaPage = new YandexSearchPage();
 
