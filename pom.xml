@@ -17,8 +17,6 @@
         <allure-junit4.version>2.6.0</allure-junit4.version>
         <testng.version>7.5</testng.version>
 
-        <thread.count>5</thread.count>
-        <fork.count>0</fork.count>
     </properties>
 
     <dependencies>
@@ -54,23 +52,6 @@
             <artifactId>allure-rest-assured</artifactId>
             <version>2.17.3</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <version>2.6.5</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.13.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
         </dependency>
 
         <dependency>
@@ -110,12 +91,6 @@
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"</argLine>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>io.qameta.allure.junit4.AllureJunit4</value>
-                        </property>
-                    </properties>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -136,22 +111,7 @@
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.11.2</version>
-                <configuration>
-                    <reportVersion>2.4.1</reportVersion>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.selenide</groupId>
-                <artifactId>selenide-selenoid</artifactId>
-                <version>2.2.1</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.6.5</version>
             </plugin>
         </plugins>
     </build>
-
 </project>
